@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Forms and Buttons -->
+        <div class="form-container">
+            <h1>Team Management</h1>
+            
+            <h2>Create Team</h2>
+            <form id="createTeamForm">
+                <label for="teamname">Team Name:</label>
+                <input type="text" id="teamname" name="teamname" required>
+                <button type="button" onclick="createTeam()">Create Team</button>
+            </form>
+
+            <h2>Add Player</h2>
+            <form id="addPlayerForm">
+                <label for="playerName">Player Name:</label>
+                <input type="text" id="playerName" name="Name" required>
+                <label for="playerAge">Player Age:</label>
+                <input type="number" id="playerAge" name="Age" required>
+                <label for="playerPosition">Position:</label>
+                <select id="playerPosition" name="Position" required>
+                    <option value="Goalkeeper">Goalkeeper</option>
+                    <option value="Defender">Defender</option>
+                    <option value="Midfielder">Midfielder</option>
+                    <option value="Striker">Striker</option>
+                </select>
+                <label for="playerRanking">Ranking:</label>
+                <input type="number" id="playerRanking" name="Ranking" required>
+                <button type="button" onclick="addPlayer()">Add Player</button>
+            </form>
+
+            <h2>Delete Player</h2>
+            <form id="deletePlayerForm">
+                <label for="playerIDDelete">Player ID:</label>
+                <input type="number" id="playerIDDelete" name="playerID" required>
+                <button type="button" onclick="deletePlayer()">Delete Player</button>
+            </form>
+
+            <h2>Update Player</h2>
+            <form id="updatePlayerForm">
+                <label for="playerIDUpdate">Player ID:</label>
+                <input type="number" id="playerIDUpdate" name="playerid" required>
+                <label for="updatedName">Updated Name:</label>
+                <input type="text" id="updatedName" name="Name">
+                <label for="updatedAge">Updated Age:</label>
+                <input type="number" id="updatedAge" name="Age">
+                <label for="updatedPosition">Position:</label>
+                <select id="updatedPosition" name="Position" required>
+                    <option value="Goalkeeper">Goalkeeper</option>
+                    <option value="Defender">Defender</option>
+                    <option value="Midfielder">Midfielder</option>
+                    <option value="Striker">Striker</option>
+                </select>
+                <label for="updatedRanking">Updated Ranking:</label>
+                <input type="number" id="updatedRanking" name="Ranking">
+                <button type="button" onclick="updatePlayer()">Update Player</button>
+            </form>
+        </div>
+
+        <!-- Right Side: Dynamic Table of Players -->
+        <div class="table-container">
+            <h2>Player List</h2>
+            <section>
+                <!-- Get Players Button -->
+                <div class="action-button">
+                    <button type="button" onclick="loadPlayers()">Get Players</button>
+                </div>
+
+                <!-- Find by Ranking Form -->
+                <div class="action-form" id="findrandingid">
+                    <form id="findrankings">
+                        <input type="number" id="rankingnum" name="rankingnum" required>
+                        <button type="button" onclick="findRanking()">Find by Ranking</button>
+                    </form>
+                </div>
+
+                <!-- Find Oldest Player Button -->
+                <div class="action-button">
+                    <button type="button" onclick="findOldest()">Find Oldest Player</button>
+                </div>
+            </section>
+
+            <table id="playersTable">
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Age</th>
+                        <th>Position</th>
+                        <th>Ranking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Player rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
