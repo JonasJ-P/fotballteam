@@ -1,8 +1,4 @@
-Ah, now I understand! You want the **entire content** of the README file to be in one markdown code block, so when it's copied from the file, all of it can be copied at once. 
 
-Here is the entire `README.md` wrapped in a **single code block**, so you can copy everything at once:
-
-```markdown
 # Football Team
 
 Welcome to the **Football Team** project! This project allows you to manage a football team's roster and various related functionalities (you can expand on this depending on what your project does).
